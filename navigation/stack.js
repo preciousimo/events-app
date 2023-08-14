@@ -5,6 +5,7 @@ import { navOptions } from './options';
 import { useNavigation } from '@react-navigation/native';
 import ProfileDetailScreen from '../screens/profiles/profile-detail-screen';
 import ProfilesScreen from '../screens/profiles/profiles-screen';
+import { HomeTabs } from './tabs';
 
 const Stack = createStackNavigator();
 
@@ -12,7 +13,7 @@ export const HomeStack = () => {
   const navigation = useNavigation()
   return (
     <Stack.Navigator screenOptions={()=>(navOptions(navigation))}>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Home" component={HomeTabs} />
       <Stack.Screen name="Event" component={EventDetailScreen} />
     </Stack.Navigator>
   );
