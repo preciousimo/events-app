@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, FlatList, RefreshControl } from "react-native";
 // import { DUMMY_DATA } from "../../data/dummy";
 import EventItem from "./event-item";
 
-export default function EventList({data}) {
+export default function EventList({data, onRefresh}) {
     const renderItem = ({item}) => {
         return  <EventItem id={item.id} name={item.name} description={item.description} qrCode={item.qr_code}/>
     }
@@ -15,7 +15,7 @@ export default function EventList({data}) {
                 refreshControl={
                     <RefreshControl 
                         refreshing={false}
-                        onRefresh={()=> console.log('refreshing...')}
+                        onRefresh={onRefresh}
                     />   
                 }
             />
